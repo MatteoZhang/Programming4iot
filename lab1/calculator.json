@@ -1,0 +1,1 @@
+{"string": "add 1 1", "result": 2.0}{"string": "div 1 0", "result": "not valid"}
