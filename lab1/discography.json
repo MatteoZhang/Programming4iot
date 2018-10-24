@@ -1,25 +1,30 @@
 {
-"discography_owner": "Tony Stark",
-"last_update": "2015-10-13 18:15",
-"album_list": [{
-"artist": "Bob Marley & The Wailers",
-"title": "Rastaman Vibration",
-"publication_year": 1976,
-"total_tracks": 11
-},{
-"artist": "Pink Floyd",
-"title": "The Wall",
-"publication_year": 1979,
-"total_tracks": 30
-},{
-"artist": "The Clash",
-"title": "Sandinista!",
-"publication_year": 1980,
-"total_tracks": 36
-},{
-"artist": "The Clash ",
-"title": "London Calling",
-"publication_year": 1978,
-"total_tracks": 19
-}]
+  "discography_owner": "Tony Stark", 
+  "album_list": [
+    {
+      "total_tracks": 11, 
+      "title": "Rastaman Vibration", 
+      "publication_year": 1976, 
+      "artist": "Bob Marley & The Wailers"
+    }, 
+    {
+      "total_tracks": 30, 
+      "title": "The Wall", 
+      "publication_year": 1979, 
+      "artist": "Pink Floyd"
+    }, 
+    {
+      "total_tracks": 36, 
+      "title": "Sandinista!", 
+      "publication_year": 1980, 
+      "artist": "The Clash"
+    }, 
+    {
+      "total_tracks": 19, 
+      "title": "London Calling", 
+      "publication_year": 1978, 
+      "artist": "The Clash "
+    }
+  ], 
+  "last_update": "2015-10-13 18:15"
 }
