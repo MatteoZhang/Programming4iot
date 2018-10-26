@@ -14,15 +14,23 @@ class DiscoManager(object):
             for i in range(self.lensub):
                 for field in self.subfeature:
                     value = data["album_list"][i][field]
-                    print value
                     if value == artist_name:
-                        print "for the given artist :\n"
-                        for j in range(len.sub):
-                            print self.subfeature[j], ": ", data["album_list"][i][self.subfeature[j]]
+                        print "for the given artist :"
+                        for entry in self.subfeature:
+                            print entry, " : ", data["album_list"][i][entry]
         except Exception, e:
             print "not found the ", artist_name, " artist"
     def search_by_title(self, title):
-        pass
+        try:
+            for i in range(self.lensub):
+                for field in self.subfeature:
+                    value = data["album_list"][i][field]
+                    if value == title:
+                        print "for the given title :"
+                        for entry in self.subfeature:
+                            print entry, " : ", data["album_list"][i][entry]
+        except Exception, e:
+            print "not found the ", title, " title"
     def search_by_pub_year(self, pub_year):
         pass
     def search_by_tot(self, tot_tracks):
