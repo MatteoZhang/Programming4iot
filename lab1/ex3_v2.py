@@ -6,14 +6,14 @@ class DiscoManager(object):
         self.data = data
         self.feature = data.keys()
         self.fnested = data["album_list"]
-        self.subfeature = self.fnested[0].keys()
+        self.subfeature = self.fnested[0].keys() #one of the album keys
         self.len = len(self.feature)
-        self.lensub = len(self.subfeature)
+        self.lensub = len(self.fnested)
     def search_by_artist(self, artist_name):
         try:
             for i in range(self.lensub):
                 for field in self.subfeature:
-                    value = data["album_list"][i][field]
+                    value = self.fnested[i][field]
                     if value == artist_name:
                         print "for the given artist :"
                         for entry in self.subfeature:
@@ -32,11 +32,32 @@ class DiscoManager(object):
         except Exception, e:
             print "not found the ", title, " title"
     def search_by_pub_year(self, pub_year):
-        pass
+        try:
+            for i in range(self.lensub):
+                for field in self.subfeature:
+                    value = data["album_list"][i][field]
+                    if value == pub_year:
+                        print "for the given pub year :"
+                        for entry in self.subfeature:
+                            print entry, " : ", data["album_list"][i][entry]
+        except Exception, e:
+            print "not found the ", pub_year, " year"
     def search_by_tot(self, tot_tracks):
-        pass
+        try:
+            for i in range(self.lensub):
+                for field in self.subfeature:
+                    value = self.fnested[i][field]
+                    if value == tot_tracks:
+                        print "for the given artist :"
+                        for entry in self.subfeature:
+                            print entry, " : ", data["album_list"][i][entry]
+        except Exception, e:
+            print "not found the ", tot_tracks, " total tracks"
     def insert_new(self, artist, title, pub_year, tot_tracks):
-        pass
+        try:
+            
+        except Exception, e:
+            print "not possible to insert"
     def print_all(self):
         print data
 
