@@ -24,7 +24,19 @@
       "title": "London Calling", 
       "publication_year": 1978, 
       "artist": "The Clash"
+    }, 
+    {
+      "total_tracks": 3, 
+      "pubblication_year": 3, 
+      "title": "a", 
+      "artist": "a"
     }
   ], 
-  "last_update": "2015-10-13 18:15"
+  "last_update": [
+    2018, 
+    10, 
+    27, 
+    10, 
+    7
+  ]
 }
