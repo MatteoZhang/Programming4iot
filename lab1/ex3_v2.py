@@ -55,7 +55,7 @@ class DiscoManager(object):
             print "not found the ", tot_tracks, " total tracks"
     def insert_new(self, artist, title, pub_year, tot_tracks):
         try:
-            
+
         except Exception, e:
             print "not possible to insert"
     def print_all(self):
