@@ -1,11 +1,12 @@
 from sys import argv
 import json
+import pprint
 
 class DiscoManager(object):
     def __init__(self, data):
         self.data = data
         self.feature = data.keys()
-        self.fnested = data["album_list"]
+        self.fnested = data["album_list"]  # array
         self.subfeature = self.fnested[0].keys() #one of the album keys
         self.len = len(self.feature)
         self.lensub = len(self.fnested)
@@ -16,8 +17,10 @@ class DiscoManager(object):
                     value = self.fnested[i][field]
                     if value == artist_name:
                         print "for the given artist :"
+                        print "\n----"
                         for entry in self.subfeature:
                             print entry, " : ", data["album_list"][i][entry]
+                        print "----\n"
         except Exception, e:
             print "not found the ", artist_name, " artist"
     def search_by_title(self, title):
@@ -27,8 +30,10 @@ class DiscoManager(object):
                     value = data["album_list"][i][field]
                     if value == title:
                         print "for the given title :"
+                        print "\n----"
                         for entry in self.subfeature:
                             print entry, " : ", data["album_list"][i][entry]
+                        print "----\n"
         except Exception, e:
             print "not found the ", title, " title"
     def search_by_pub_year(self, pub_year):
@@ -36,10 +41,12 @@ class DiscoManager(object):
             for i in range(self.lensub):
                 for field in self.subfeature:
                     value = data["album_list"][i][field]
-                    if value == pub_year:
+                    if value == int(pub_year):
                         print "for the given pub year :"
+                        print "\n----"
                         for entry in self.subfeature:
                             print entry, " : ", data["album_list"][i][entry]
+                        print "----\n"
         except Exception, e:
             print "not found the ", pub_year, " year"
     def search_by_tot(self, tot_tracks):
@@ -47,19 +54,22 @@ class DiscoManager(object):
             for i in range(self.lensub):
                 for field in self.subfeature:
                     value = self.fnested[i][field]
-                    if value == tot_tracks:
+                    if value == int(tot_tracks):
                         print "for the given artist :"
+                        print "\n----"
                         for entry in self.subfeature:
                             print entry, " : ", data["album_list"][i][entry]
+                        print "----\n"
         except Exception, e:
             print "not found the ", tot_tracks, " total tracks"
     def insert_new(self, artist, title, pub_year, tot_tracks):
         try:
-
+            self.fnested.append({"total_tracks": int(tot_tracks), "artist": artist, "pubblication_year": int(pub_year), "title": title})
         except Exception, e:
             print "not possible to insert"
     def print_all(self):
-        print data
+        pp = pprint.PrettyPrinter(indent=2)
+        pp.pprint(data)
 
 if __name__ == "__main__":
     # script, filename = argv
@@ -102,7 +112,7 @@ choose a command by typing it:
             op.search_by_pub_year(pub_year)
         elif operation == "search_by_tot_tracks":
             tot_tracks = raw_input("give me the tot tracks of the album: ")
-            op.search_by_tot(tracks)
+            op.search_by_tot(tot_tracks)
         elif operation == "insert_new":
             artist = raw_input("give me artist name: ")
             title = raw_input("give me the title of the album: ")
