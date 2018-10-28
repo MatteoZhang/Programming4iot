@@ -1,7 +1,7 @@
 from sys import argv
 import json
 import pprint
-import datetime
+from datetime import datetime
 
 class DiscoManager(object):
     def __init__(self, data):
@@ -66,8 +66,8 @@ class DiscoManager(object):
     def insert_new(self, artist, title, pub_year, tot_tracks):
         try:
             self.fnested.append({"total_tracks": int(tot_tracks), "artist": artist, "pubblication_year": int(pub_year), "title": title})
-            now = datetime.datetime.now()
-            data["last_update"] = now.year, now.month, now.day, now.hour, now.minute
+            now = datetime.now().strftime("%Y-%B-%d ,%I:%M%p")
+            data["last_update"] = now
         except Exception, e:
             print "not possible to insert"
     def print_all(self):
@@ -121,7 +121,7 @@ choose a command by typing it:
             title = raw_input("give me the title of the album: ")
             pub_year = raw_input("give me the pub year of the album: ")
             tot_tracks = raw_input("give me the tot tracks of the album: ")
-            op.insert_new(artist,title,pub_year,tot_tracks)
+            op.insert_new(artist, title, pub_year, tot_tracks)
         elif operation == "print_all":
             op.print_all()
         else:
