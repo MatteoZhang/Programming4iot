@@ -4,7 +4,12 @@ import cherrypy
 
 class StringGeneratorWebService(object):
 	exposed = True
-	
+
+	class HelloWorld(object):
+		@cherrypy.expose
+		def index(self):
+			return "Hello world!"
+
 	def GET (self, *uri, **params):		
 		return ("uri: %s; Parameters %s, uri length %s" % (str (uri), str(params), len(uri)))
 		
@@ -23,7 +28,7 @@ class Vector:
 	def pick(self):
 		return self.vector1[0]
 		
-	def add_v (self):		
+	def add_v(self):
 		result = 0
 		for i in range(len(self.vector1)):
 			result += (self.vector1)[i]
@@ -39,7 +44,7 @@ if __name__ == '__main__':
 		'tools.sessions.on': True,
 	}
 }
-cherrypy.tree.mount (StringGeneratorWebService(), '/string', conf)
+cherrypy.tree.mount(StringGeneratorWebService(), '/string', conf)
 cherrypy.config.update({'server.socket_host': '0.0.0.0'})
 cherrypy.config.update({'server.socket_port': 9090})
 cherrypy.engine.start()
