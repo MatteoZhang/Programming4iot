@@ -48,4 +48,4 @@ if __name__=='__main__':
     cherrypy.engine.start()
     cherrypy.engine.block()
 
-    
+## usare http://localhost:9090/string/add?op1=0&op2=1
