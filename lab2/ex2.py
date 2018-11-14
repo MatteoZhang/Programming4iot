@@ -42,10 +42,10 @@ if __name__=='__main__':
             'tools.sessions.on': True,
         }
     }
-    cherrypy.tree.mount(WebService(), '/string', conf)
+    cherrypy.tree.mount(WebService(), '/operation', conf)
     cherrypy.config.update({'server.socket_host': '0.0.0.0'})
     cherrypy.config.update({'server.socket_port': 9090})
     cherrypy.engine.start()
     cherrypy.engine.block()
 
-## usare http://localhost:9090/string/add/0/1
+## usare http://localhost:9090/operation/add/0/1
