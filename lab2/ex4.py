@@ -9,14 +9,7 @@ class WebService(object):
         return index
 
 if __name__=='__main__':
-    conf = {
-        '/': {
-            'request.dispatch': cherrypy.dispatch.MethodDispatcher(),
-            'tools.sessions.on': True,
-        }
-    }
-    cherrypy.tree.mount(WebService(), '/', conf)
-    cherrypy.config.update({'server.socket_host': '0.0.0.0'})
-    cherrypy.config.update({'server.socket_port': 8080})
+    cherrypy.tree.mount(WebService(), '/', config='server.conf')
+    cherrypy.config.update('server.conf')
     cherrypy.engine.start()
     cherrypy.engine.block()
