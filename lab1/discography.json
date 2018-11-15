@@ -3,40 +3,40 @@
   "album_list": [
     {
       "total_tracks": 11, 
-      "title": "Rastaman Vibration", 
+      "artist": "Bob Marley & The Wailers", 
       "publication_year": 1976, 
-      "artist": "Bob Marley & The Wailers"
+      "title": "Rastaman Vibration"
     }, 
     {
       "total_tracks": 30, 
-      "title": "The Wall", 
+      "artist": "Pink Floyd", 
       "publication_year": 1979, 
-      "artist": "Pink Floyd"
+      "title": "The Wall"
     }, 
     {
       "total_tracks": 36, 
-      "title": "Sandinista!", 
+      "artist": "The Clash", 
       "publication_year": 1980, 
-      "artist": "The Clash"
+      "title": "Sandinista!"
     }, 
     {
       "total_tracks": 19, 
-      "title": "London Calling", 
+      "artist": "The Clash", 
       "publication_year": 1978, 
-      "artist": "The Clash"
+      "title": "London Calling"
     }, 
     {
       "total_tracks": 3, 
-      "pubblication_year": 3, 
+      "artist": "a", 
       "title": "a", 
-      "artist": "a"
+      "pubblication_year": 3
+    }, 
+    {
+      "total_tracks": 23423, 
+      "pubblication_year": 32424, 
+      "title": "asdfasdf", 
+      "artist": "adasdf"
     }
   ], 
-  "last_update": [
-    2018, 
-    10, 
-    27, 
-    10, 
-    7
-  ]
+  "last_update": "2018-November-15 ,03:26PM"
 }

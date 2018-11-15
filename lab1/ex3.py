@@ -75,20 +75,10 @@ class DiscoManager(object):
         pp.pprint(data)
 
 if __name__ == "__main__":
-    # script, filename = argv
     filename = "discography.json"
     print "this is ur file: ", filename
-    # loading file
     with open(filename) as fp:
         data = json.load(fp)
-
-    # debug
-    '''fields = data.keys()  # notice it's an array
-    fnested = data["album_list"]
-    print "these are the main fields of the ", filename, "file :\n", fields
-    print "these are the keys in the nested one:\n", fnested
-    feature = fnested[0].keys()
-    print "feature in the sub dictionary\n", feature'''
 
     # menu
     while True:
@@ -134,4 +124,3 @@ choose a command by typing it:
 
     with open(filename, 'w') as fp:
         json.dump(data, fp, indent=2)
-    fp.close()

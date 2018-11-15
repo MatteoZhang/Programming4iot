@@ -4,7 +4,7 @@ class WebService(object):
     exposed = True
 
     def GET(self, *uri, **param):
-        with open("./freeboard/index.html") as fp:
+        with open("freeboard/index.html") as fp:
             index = fp.read()
         return index
 
