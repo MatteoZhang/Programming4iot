@@ -84,13 +84,13 @@ if __name__ == "__main__":
     while True:
         operation = raw_input('''
 choose a command by typing it:
-1)search_by_artist
-2)search_by_title
-3)search_by_pub_year
-4)search_by_tot_tracks
-5)insert_new
-6)print_all 
-7)exit
+--search_by_artist
+--search_by_title
+--search_by_pub_year
+--search_by_tot_tracks
+--insert_new
+--print_all 
+--exit
 ''')
         op = DiscoManager(data)
         # we can also write DiscoManager(op,data)

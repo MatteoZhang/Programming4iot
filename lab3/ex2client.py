@@ -1,17 +1,22 @@
 import requests
 
 if __name__=="__main__":
+    list = ["search_by_artist",
+        "search_by_title",
+        "search_by_pub_year",
+        "search_by_tot_tracks",
+        "insert_new",
+        "print_all",
+        "exit"]
     while True:
-        print "\nThis is a Calculator"
-        operation = raw_input("choose operation: add, sub, div, mul: ")
-        op1 = raw_input("choose the operand1: ")
-        op2 = raw_input("choose the operand2: ")
-        try:
-            s = requests.get('http://localhost:8081/string/'+operation+'?'+'op1='+op1+'&'+'op2='+op2)
-            r = s.json()
-            print "\noperation: ", r['operation']
-            print "operand1: ", r['op1']
-            print "operand2: ", r['op2']
-            print "%s %s %s = %s" %(r['op1'], r['operation'], r['op2'], r['result'])
-        except Exception, e:
-            print "input error try again"
+        print """\nDiscography manager:
+        --search_by_artist
+        --search_by_title
+        --search_by_pub_year
+        --search_by_tot_tracks
+        --insert_new
+        --print_all 
+        --exit"""
+        operation = raw_input("choose operation: ")
+        while operation not in list:
+            operation = raw_input("choose operation (this time choose it right): ")

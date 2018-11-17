@@ -1,14 +1,17 @@
 import cherrypy
 import json
-from asset.calculator import OP
-
 
 class WebService(object):
     exposed = True
 
-
     def GET(self, *uri, **params):
-
+        pass
+    def POST(self, *uri, **params):
+        pass
+    def PUT(self, *uri, **params):
+        pass
+    def DELETE(self, *uri, **params):
+        pass
 
 if __name__=='__main__':
     conf = {
