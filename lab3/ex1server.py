@@ -1,4 +1,3 @@
-import requests
 import cherrypy
 import json
 from asset.calculator import OP
@@ -39,11 +38,11 @@ if __name__=='__main__':
             'tools.sessions.on': True,
         }
     }
-    cherrypy.tree.mount(WebService(), '/string', conf)
+    cherrypy.tree.mount(WebService(), '/', conf)
     cherrypy.config.update({'server.socket_host': '0.0.0.0'})
     cherrypy.config.update({'server.socket_port': 8081})
     cherrypy.engine.start()
     cherrypy.engine.block()
 
-## usare r = requests.get('http://localhost:8081/string/add?op1=0&op2=1')
+## usare r = requests.get('http://localhost:8081/add?op1=0&op2=1')
 ## r.txt
