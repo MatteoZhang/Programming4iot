@@ -7,7 +7,7 @@ if __name__=="__main__":
         op1 = raw_input("choose the operand1: ")
         op2 = raw_input("choose the operand2: ")
         try:
-            s = requests.get('http://localhost:8081/string/'+operation+'?'+'op1='+op1+'&'+'op2='+op2)
+            s = requests.get('http://localhost:8081/'+operation+'?'+'op1='+op1+'&'+'op2='+op2)
             r = s.json()
             print "\noperation: ", r['operation']
             print "operand1: ", r['op1']
