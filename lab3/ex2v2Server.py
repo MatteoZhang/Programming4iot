@@ -7,11 +7,16 @@ class DiscoManager(object):
         self.data = data
     def searchAlbum(self, inst):
         try:
-            for i in range(len(self.data["album_title"])):
-                pass
+            dictionary = {}
+            for i in range(len(self.data["album_list"])):
+                for key in self.data["album_list"][i].keys():
+                    value = self.data["album_list"][i][key]
+                    if value == inst:
+                        for entry in self.data["album_list"][i].keys():
+                            dictionary.update({entry: self.data["album_list"][i][entry]})
         except Exception, e:
             print "not found the ", inst, " due to error: ", e
-
+        return dictionary
 class WebService(object):
     exposed = True
 
