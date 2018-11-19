@@ -27,16 +27,30 @@
     }, 
     {
       "total_tracks": 3, 
-      "artist": "a", 
       "title": "a", 
+      "artist": "a", 
       "pubblication_year": 3
     }, 
     {
       "total_tracks": 23423, 
       "pubblication_year": 32424, 
-      "title": "asdfasdf", 
-      "artist": "adasdf"
+      "artist": "adasdf", 
+      "title": "asdfasdf"
+    }, 
+    [
+      {
+        "total_tracks": 2, 
+        "artist": "qwer", 
+        "publication_year": 12212, 
+        "title": "ee"
+      }
+    ], 
+    {
+      "total_tracks": 323, 
+      "title": "asdf", 
+      "publication_year": 232, 
+      "artist": "asdf"
     }
   ], 
-  "last_update": "2018-November-15 ,03:26PM"
+  "last_update": "2018-November-19 ,11:41AM"
 }
