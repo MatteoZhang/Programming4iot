@@ -32,8 +32,11 @@ if __name__ == "__main__":
                 totalTracks = raw_input("total number of tracks: ")
                 r = requests.put(ADDRESS + operation + '?artist=' + artistName + '&album=' +
                                  albumTitle + '&year=' + pubYear + '&tracks=' + totalTracks)
+            elif operation == "delete":
+                par = raw_input("what u want to delete?: ")
+                r = requests.delete(ADDRESS + operation + '/' + par)
             s = r.json()
             print json.dumps(s, indent=2)
             print "\n"
         except Exception, e:
-            print "error try again\n"
+            print "error: ", e, " -- try again\n"

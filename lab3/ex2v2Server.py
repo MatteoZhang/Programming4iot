@@ -4,10 +4,11 @@ from datetime import datetime
 
 class DiscoManager(object):
     def __init__(self, data):
-
+        self.data = data
     def searchAlbum(self, inst):
         try:
-
+            for i in range(len(self.data["album_title"])):
+                pass
         except Exception, e:
             print "not found the ", inst, " due to error: ", e
 
