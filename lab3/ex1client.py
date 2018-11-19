@@ -1,6 +1,6 @@
 import requests
 
-if __name__=="__main__":
+if __name__ == "__main__":
     while True:
         print "\nThis is a Calculator"
         operation = raw_input("choose operation: add, sub, div, mul: ")
@@ -12,6 +12,6 @@ if __name__=="__main__":
             print "\noperation: ", r['operation']
             print "operand1: ", r['op1']
             print "operand2: ", r['op2']
-            print "%s %s %s = %s" %(r['op1'], r['operation'], r['op2'], r['result'])
+            print "%s %s %s = %s" % (r['op1'], r['operation'], r['op2'], r['result'])
         except Exception, e:
             print "input error try again"

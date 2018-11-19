@@ -24,13 +24,11 @@ if __name__=="__main__":
             if operation in lista[0:4]:
                 par = raw_input("parameter: ")
                 try:
-                    r = requests.get('http://localhost:8081/' + operation + '/' + par)
-                    s = r.json()
+                    r = requests.get('http://localhost:8080/' + operation + '/' + par)
                 except Exception,e:
                     print "invalid parameter"
             elif operation == "print_all":
                 r = requests.get('http://localhost:8080/' + operation)
-                s = r.json()
             elif operation == "exit":
                 break
             else:
@@ -38,9 +36,9 @@ if __name__=="__main__":
                 albumTitle = raw_input("album title: ")
                 pubYear = raw_input("publication year: ")
                 totalTracks = raw_input("total number of tracks: ")
-                r = requests.post('http://localhost:8081/' + operation + '?' + 'artist=' + artistName + '&' +
+                r = requests.post('http://localhost:8080/' + operation + '?' + 'artist=' + artistName + '&' +
                                   'album=' + albumTitle + '&' + 'year=' + pubYear + '&' + 'tracks=' + totalTracks)
-                s = r.json()
+            s = r.json()
             print json.dumps(s)
         except Exception,e:
             print "invalid operation"
