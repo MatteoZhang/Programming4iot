@@ -1,0 +1,31 @@
+[
+{
+"id": "1",
+"district": "2",
+"lon": "2.180042",
+"lat": "41.397952",
+"bikes": "20",
+"slots": "2",
+"zip": "08013",
+"address": "Gran Via Corts Catalanes",
+"addressNumber": "760",
+"nearbyStations": "24,369,387,426",
+"status": "OPN",
+"name": "01 - C/ GRAN VIA CORTS CATALANES 760",
+"stationType": "BIKE"
+},{
+"id": "496",
+"district": "2",
+"lon": "2.175141",
+"lat": "41.404871",
+"bikes": "12",
+"slots": "12",
+"zip": "08025",
+"address": "C/ DE PROVENÇA",
+"addressNumber": "445",
+"nearbyStations": "452,475",
+"status": "OPN",
+"name": "496 - C/ DE PROVENÇA, 445 ",
+"stationType": "ELECTRIC_BIKE"
+}
+]
