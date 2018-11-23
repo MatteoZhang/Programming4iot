@@ -60,7 +60,7 @@ class WebServer():  # RESTful web server
 
 class Discography(object):
 
-    def __init__(self, filename='discography.json'):
+    def __init__(self, filename='asset/discography.json'):
         self.filename = filename
         self.data = {}
 

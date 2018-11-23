@@ -5,18 +5,27 @@ from datetime import datetime
 class DiscoManager(object):
     def __init__(self, data):
         self.data = data
-    def searchAlbum(self, inst):
+
+    def search_album(self, inst):
         try:
-            dictionary = {}
-            for i in range(len(self.data["album_list"])):
-                for key in self.data["album_list"][i].keys():
-                    value = self.data["album_list"][i][key]
-                    if value == inst:
-                        for entry in self.data["album_list"][i].keys():
-                            dictionary.update({entry: self.data["album_list"][i][entry]})
+            dictionary = []
+            for albums in self.data["album_list"]:
+                if inst in [albums["title"], albums["artist"]]:
+                    dictionary.append(albums)
         except Exception, e:
-            print "not found the ", inst, " due to error: ", e
+            print "not found the ", inst, " -- due to error: ", e
         return dictionary
+
+    def search_album2(self, inst):
+        try:
+            dictionary = []
+            for albums in self.data["album_list"]:
+                if inst in [albums["publication_year"], albums["total_tracks"]]:
+                    dictionary.append(albums)
+        except Exception, e:
+            print "not found the ", inst, " -- due to error: ", e
+        return dictionary
+
 class WebService(object):
     exposed = True
 
@@ -27,12 +36,16 @@ class WebService(object):
                 data = json.load(disco)
             if uri[0] == 'print_all':
                 return json.dumps(data)
-            elif uri[0] == 'search_by_artist' or 'search_by_title' or 'search_by_pub_year' or 'search_by_tot_tracks':
+            elif uri[0] == 'search_by_artist' or 'search_by_title':
                 operation = DiscoManager(data)
-                dictionary = operation.searchAlbum(uri[1])
+                dictionary = operation.search_album(uri[1])
+                return json.dumps(dictionary)
+            elif uri[0] == 'search_by_pub_year' or 'search_by_tot_tracks':
+                operation = DiscoManager(data)
+                dictionary = operation.search_album2(int(uri[1]))
                 return json.dumps(dictionary)
         except Exception, e:
-            print 'wrong get request ', e
+            print 'wrong get request: ', e
     def POST(self, *uri, **params):
         # create something
         pass
@@ -54,6 +67,16 @@ class WebService(object):
         except Exception, e:
             print 'wrong put request ', e
     def DELETE(self, *uri, **params):
+        try:
+            print "received uri: ", uri, "params: ", params
+            if uri[0] == 'delete':
+                with open("asset/discography.json", 'r') as disco:
+                    data = json.load(disco)
+                op = DiscoManager(data)
+                dictionary = op.search_album(params['album'])
+                del data['album_list'][dictionary]
+        except Exception, e:
+            print "error: ", e, "\n"
         pass
 
 if __name__=='__main__':
@@ -65,6 +88,6 @@ if __name__=='__main__':
     }
     cherrypy.tree.mount(WebService(), '/', conf)
     cherrypy.config.update({'server.socket_host': '0.0.0.0'})
-    cherrypy.config.update({'server.socket_port': 8082})
+    cherrypy.config.update({'server.socket_port': 8085})
     cherrypy.engine.start()
     cherrypy.engine.block()

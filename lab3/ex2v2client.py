@@ -1,7 +1,7 @@
 import requests
 import json
 
-ADDRESS = 'http://localhost:8082/'
+ADDRESS = 'http://localhost:8085/'
 
 if __name__ == "__main__":
     while True:
@@ -11,9 +11,11 @@ if __name__ == "__main__":
         search_by_pub_year
         search_by_tot_tracks 
         insert_new
-        print_all 
+        print_all
+        delete 
         exit"""
         try:
+            s = []
             operation = raw_input("choose operation: ")
             if operation in ['search_by_artist', 'search_by_title', 'search_by_pub_year', 'search_by_tot_tracks']:
                 par = raw_input("parameter: ")

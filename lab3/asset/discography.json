@@ -27,7 +27,7 @@
     }, 
     {
       "total_tracks": 3, 
-      "pubblication_year": 3, 
+      "publication_year": 3,
       "artist": "a", 
       "title": "a"
     }, 
@@ -35,16 +35,8 @@
       "total_tracks": 23423, 
       "artist": "adasdf", 
       "title": "asdfasdf", 
-      "pubblication_year": 32424
-    }, 
-    [
-      {
-        "total_tracks": 2, 
-        "title": "ee", 
-        "publication_year": 12212, 
-        "artist": "qwer"
-      }
-    ], 
+      "publication_year": 32424
+    },
     {
       "total_tracks": 323, 
       "artist": "asdf", 
