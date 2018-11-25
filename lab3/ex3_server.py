@@ -7,7 +7,7 @@ LINK = 'https://www.bicing.cat/availability_map/getJsonObject'
 class MyOrder(object):
     def order_by_slots(self, dictionary, n=10, rev=True):
         dictionary_sorted = sorted(dictionary, key=lambda entry: int(entry['slots']), reverse=rev)
-        return dictionary_sorted
+        return dictionary_sorted[1:n]
 
 class WebServer(object):
     exposed = True
