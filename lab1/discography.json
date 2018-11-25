@@ -29,13 +29,7 @@
       "total_tracks": 3, 
       "artist": "a", 
       "title": "a", 
-      "pubblication_year": 3
-    }, 
-    {
-      "total_tracks": 23423, 
-      "pubblication_year": 32424, 
-      "title": "asdfasdf", 
-      "artist": "adasdf"
+      "publication_year": 3
     }
   ], 
   "last_update": "2018-November-15 ,03:26PM"

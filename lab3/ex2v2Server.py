@@ -91,3 +91,7 @@ if __name__=='__main__':
     cherrypy.config.update({'server.socket_port': 8085})
     cherrypy.engine.start()
     cherrypy.engine.block()
+
+# netstat -ano | findstr :PORTA
+# taskkill /PID PROCESSID /F
+
