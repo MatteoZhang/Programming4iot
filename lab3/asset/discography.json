@@ -27,16 +27,16 @@
     }, 
     {
       "total_tracks": 3, 
-      "publication_year": 3,
       "artist": "a", 
+      "publication_year": 3, 
       "title": "a"
     }, 
     {
       "total_tracks": 23423, 
       "artist": "adasdf", 
-      "title": "asdfasdf", 
-      "publication_year": 32424
-    },
+      "publication_year": 32424, 
+      "title": "asdfasdf"
+    }, 
     {
       "total_tracks": 323, 
       "artist": "asdf", 
@@ -48,7 +48,19 @@
       "title": "asd", 
       "publication_year": 23, 
       "artist": "ciaoaoaoa"
+    }, 
+    {
+      "total_tracks": 323, 
+      "artist": "hacca", 
+      "publication_year": 12, 
+      "title": "c"
+    }, 
+    {
+      "total_tracks": 1, 
+      "title": "a", 
+      "publication_year": 1, 
+      "artist": "a"
     }
   ], 
-  "last_update": "2018-November-19 ,09:56PM"
+  "last_update": "2018-November-25 ,12:44PM"
 }

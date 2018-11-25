@@ -20,7 +20,9 @@ class DiscoManager(object):
         try:
             dictionary = []
             for albums in self.data["album_list"]:
+                print albums
                 if inst in [albums["publication_year"], albums["total_tracks"]]:
+                    print albums
                     dictionary.append(albums)
         except Exception, e:
             print "not found the ", inst, " -- due to error: ", e
@@ -37,13 +39,15 @@ class WebService(object):
                 data = json.load(disco)
             if uri[0] == 'print_all':
                 return json.dumps(data)
-            elif uri[0] == 'search_by_artist' or 'search_by_title':
+            elif uri[0] == 'search_by_artist' or uri[0] == 'search_by_title':
                 operation = DiscoManager(data)
                 dictionary = operation.search_album(uri[1])
                 return json.dumps(dictionary)
-            elif uri[0] == 'search_by_pub_year' or 'search_by_tot_tracks':
+            elif uri[0] == 'search_by_pub_year' or uri[0] == 'search_by_tot_tracks':
                 operation = DiscoManager(data)
-                dictionary = operation.search_album2(int(uri[1]))
+                print uri[1]
+                number = int(uri[1])
+                dictionary = operation.search_album2(number)
                 return json.dumps(dictionary)
         except Exception, e:
             print 'wrong get request: ', e
@@ -76,12 +80,17 @@ class WebService(object):
             if uri[0] == 'delete':
                 with open("asset/discography.json", 'r') as disco:
                     data = json.load(disco)
+                print data
                 op = DiscoManager(data)
-                dictionary = op.search_album(params['album'])
-                del data['album_list'][dictionary]
+                dictionary = op.search_album(uri[1])
+                print dictionary
+                data['album_list'].remove(dictionary[0])
+                now = datetime.now().strftime("%Y-%B-%d ,%I:%M%p")
+                data['last_update'] = now
+                return json.dumps(data)
         except Exception, e:
             print "error: ", e, "\n"
-        pass
+
 
 if __name__=='__main__':
     conf = {
