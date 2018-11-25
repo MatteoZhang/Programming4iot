@@ -1,7 +1,3 @@
-#!/usr/bin/env python3
-"""
-@author = Paolo Grasso
-"""
 
 import json
 import cherrypy
@@ -12,8 +8,8 @@ LINK = 'https://www.bicing.cat/availability_map/getJsonObject'
 
 class WebServer(object):
     exposed = True
-    @cherrypy.tools.json_out()
 
+    @cherrypy.tools.json_out()
     def GET(self, *uri, **params):
         data = requests.get(LINK)
 
@@ -24,7 +20,7 @@ class WebServer(object):
                 N = int(N)
 
                 if N < 1:
-                    raise exception
+                    raise Exception
 
             except:
                 N = 10
@@ -42,7 +38,7 @@ class WebServer(object):
                 rev = True
 
             j = json.loads(data.text)
-            j = sorted(j, key = lambda i: int(i['slots']), reverse=rev)
+            j = sorted(j, key=lambda i: int(i['slots']), reverse=rev)
             del j[N:len(j)]
 
         if uri[0] == 'bikes':
@@ -51,7 +47,7 @@ class WebServer(object):
                 N = int(N)
 
                 if N < 1:
-                    raise exception
+                    raise Exception
 
             except:
                 N = 10
@@ -90,7 +86,7 @@ class WebServer(object):
                 N = int(N)
 
                 if N < 1:
-                    raise exception
+                    raise Exception
 
             except:
                 N = 10
