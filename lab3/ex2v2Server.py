@@ -26,6 +26,7 @@ class DiscoManager(object):
             print "not found the ", inst, " -- due to error: ", e
         return dictionary
 
+
 class WebService(object):
     exposed = True
 
@@ -46,9 +47,11 @@ class WebService(object):
                 return json.dumps(dictionary)
         except Exception, e:
             print 'wrong get request: ', e
+
     def POST(self, *uri, **params):
         # create something
         pass
+
     def PUT(self, *uri, **params):
         # manipulate what u have already
         print "received uri: ", uri, "params: ", params
@@ -66,6 +69,7 @@ class WebService(object):
                 return json.dumps(data)
         except Exception, e:
             print 'wrong put request ', e
+
     def DELETE(self, *uri, **params):
         try:
             print "received uri: ", uri, "params: ", params
