@@ -17,7 +17,7 @@ class WebServer(object):
         print "received uri: ", uri, " ; params: ", params
         if uri[0] == 'slots':
             try:
-              	par = uri[0]
+                par = uri[0]
                 N = int(params['N'])
                 reversion = bool(params['reversion'])
                 Order = MyOrder()
@@ -25,9 +25,9 @@ class WebServer(object):
                 return json.dumps(obj_ordered)
             except Exception, e:
                 print "error: ", e
-		if uri[0] == 'bikes':
-        	try:
-              	par = uri[0]
+        if uri[0] == 'bikes':
+            try:
+                par = uri[0]
                 N = int(params['N'])
                 reversion = bool(params['reversion'])
                 Order = MyOrder()
@@ -38,29 +38,29 @@ class WebServer(object):
         # matches = [x for x in lst if fulfills_some_condition(x)] 
         # https://stackoverflow.com/questions/9542738/python-find-in-list
 		if uri[0] == 'zip':
-          	try:
-              	zipcode = params['zipcode']
+            try:
+                zipcode = params['zipcode']
             except Exception, e:
-              	print "error: ", e 
-              	print "zipcode must be specified try /zip?zipcode=08025"
+                print "error: ", e
+                print "zipcode must be specified try /zip?zipcode=08025"
             matches = r.json()
-            matches = [x for x in lst if x['zip'] == zipcode] 
-        	return json.dumps(matches)
+            matches = [x for x in lst if x['zip'] == zipcode]
+            return json.dumps(matches)
         if uri[0] == 'ELECTRIC_BIKE':
-          	try:
-              	N = int(params['N'])
+            try:
+                N = int(params['N'])
             except Exception, e:
-              	print "optional parameter not found"
+                print "optional parameter not found"
                 N = 10
-          	matches = r.json()
+            matches = r.json()
             matches = [x for x in matches if x['stationType'] == uri[0]] 
             matches = [x for x in matches if int(x['bikes']) >= N]
-        	return json.dumps(matches)
-          
-		if uri[0] == 'count':
+            return json.dumps(matches)
+
+        if uri[0] == 'count':
             try:
                 district = params['district']
-               	matches = r.json()
+                matches = r.json()
                 matches = [x for x in matches if x['district'] == district]
                 bikes = sum([int(x['bikes']) for x in matches])
                 slots = sum([int(x['slots']) for x in matches])
