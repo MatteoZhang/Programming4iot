@@ -10,10 +10,9 @@ class MyPublisher:
 		# register the callback
 		self._paho_mqtt.on_connect = self.myOnConnect
 
-		#self.messageBroker = 'iot.eclipse.org'
-		self.messageBroker = '192.168.1.5'
+		self.messageBroker = 'iot.eclipse.org'
 
-	def start (self):
+	def start(self):
 		#manage connection to broker
 		self._paho_mqtt.connect(self.messageBroker, 1883)
 		self._paho_mqtt.loop_start()
