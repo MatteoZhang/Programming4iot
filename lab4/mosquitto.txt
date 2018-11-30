@@ -1,0 +1,20 @@
+chiudi firewall
+installare openssl link nel read me
+
+aprire un nuovo prompt in modalità amministratore
+mosquitto -p 1883 -v
+tenere il prompt aperto
+
+aprire un' altro prompt
+mosquitto_pub -h <IP ADDRESS> -t <topic> -m "messaggio"
+
+aprire un terzo prompt
+mosquitto_sub -h <IP ADDRESS> -t <topic>
+
+<IP ADDRESS> si trova con ipconfig
+il pub usa il suo ip
+il sub usa ip del pub
+
+optional :
+mosquitto -d
+net start mosquitto
