@@ -16,7 +16,8 @@ class MyPublisher:
         self._paho_mqtt = PahoMQTT.Client(self.clientID, False)
         # register the callback
         self._paho_mqtt.on_connect = self.myOnConnect
-        self.messageBroker = 'iot.eclipse.org'
+        self.messageBroker = '192.168.1.135'
+        #self.messageBroker = 'iot.eclipse.org'
 
     def start(self):
         #manage connection to broker
@@ -46,6 +47,6 @@ if __name__ == "__main__":
         print ("Publishing: '%s' & '%s'" % (message, dmytime))
         test.myPublish('/unix', message)
         test.myPublish('/dmytime', dmytime)
-        time.sleep(5)
+        time.sleep(30)
 
     test.stop()

@@ -17,7 +17,7 @@ class MySubscriber:
         self._paho_mqtt.on_connect = self.myOnConnect
         self._paho_mqtt.on_message = self.myOnMessageReceived
         self.topic = '/unix'
-        self.messageBroker = 'iot.eclipse.org'
+        self.messageBroker = '192.168.1.135'
 
     def start(self):
         #manage connection to broker

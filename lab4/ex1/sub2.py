@@ -17,7 +17,7 @@ class MySubscriber:
         self._paho_mqtt.on_connect = self.myOnConnect
         self._paho_mqtt.on_message = self.myOnMessageReceived
         self.topic = '/dmytime'
-        self.messageBroker = 'iot.eclipse.org'
+        self.messageBroker = '192.168.1.135'
 
     def start(self):
         #manage connection to broker
@@ -37,7 +37,7 @@ class MySubscriber:
         print ("Topic: '" + msg.topic + "', Qos: '" + str(msg.qos) + "' Message: '" + str(msg.payload) + "'")
 
 if __name__ == "__main__":
-    test = MySubscriber("MySubscriber 1")
+    test = MySubscriber("MySubscriber 2")
     test.start()
 
     while True:
