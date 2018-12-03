@@ -1,8 +1,10 @@
-chiudi firewall
 installare openssl link nel read me
+http://slproweb.com/products/Win32OpenSSL.html
+win64 openssl v1.1.0j.light
 
-aprire un nuovo prompt in modalità amministratore
+aprire un nuovo prompt e scrivere
 mosquitto -p 1883 -v
+per creare il broker dei messaggi
 tenere il prompt aperto
 
 aprire un' altro prompt
@@ -12,8 +14,9 @@ aprire un terzo prompt
 mosquitto_sub -h <IP ADDRESS> -t <topic>
 
 <IP ADDRESS> si trova con ipconfig
-il pub usa il suo ip
-il sub usa ip del pub
+il pub e sub usano ip del broker
+
+per trovare ip del broker fare ipconfig
 
 optional :
 mosquitto -d
