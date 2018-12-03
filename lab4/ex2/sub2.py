@@ -5,7 +5,7 @@ import time
 #broker = 'broker.hivmq.com'
 #broker = 'iot.eclipse.org'
 #broker = '192.168.43.220'
-
+IPv4 = '192.168.43.178'
 
 class MySubscriber:
     def __init__(self, clientID):
@@ -17,7 +17,7 @@ class MySubscriber:
         self._paho_mqtt.on_connect = self.myOnConnect
         self._paho_mqtt.on_message = self.myOnMessageReceived
         self.topic = '/dmytime'
-        self.messageBroker = '192.168.1.135'
+        self.messageBroker = IPv4
 
     def start(self):
         #manage connection to broker
