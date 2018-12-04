@@ -5,7 +5,7 @@ import requests
 LINK = 'https://www.bicing.cat/availability_map/getJsonObject'
 
 class MyOrder(object):
-    def order_by_par(self, dictionary, n=10, rev=True, par):
+    def order_by_par(self, dictionary, n=10, rev=True, par=''):
         dictionary_sorted = sorted(dictionary, key=lambda entry: int(entry[par]), reverse=rev)
         return dictionary_sorted[1:n]
 
@@ -37,15 +37,17 @@ class WebServer(object):
                 print "error: ", e
         # matches = [x for x in lst if fulfills_some_condition(x)] 
         # https://stackoverflow.com/questions/9542738/python-find-in-list
-		if uri[0] == 'zip':
+
+        if uri[0] == 'zip':
             try:
                 zipcode = params['zipcode']
             except Exception, e:
                 print "error: ", e
                 print "zipcode must be specified try /zip?zipcode=08025"
             matches = r.json()
-            matches = [x for x in lst if x['zip'] == zipcode]
+            matches = [x for x in matches if x['zip'] == zipcode]
             return json.dumps(matches)
+
         if uri[0] == 'ELECTRIC_BIKE':
             try:
                 N = int(params['N'])
