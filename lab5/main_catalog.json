@@ -1,0 +1,56 @@
+{
+  "user": [
+    {
+      "surname": "grasso", 
+      "email": "paolo.grasso@gmail.com", 
+      "name": "paolo", 
+      "id": "ciccio"
+    }, 
+    {
+      "surname": "fax", 
+      "email": "edo.fax@gmail.com", 
+      "name": "edo", 
+      "id": "stampantefax"
+    }, 
+    {
+      "surname": "maffei", 
+      "email": "marxia.mffei@gmail.com", 
+      "name": "marzia", 
+      "id": "marxia"
+    }, 
+    {
+      "email": "marxia.mffei@gmail.com", 
+      "surname": "maffei", 
+      "id": "marxia", 
+      "name": "marzia"
+    }
+  ], 
+  "devices": [
+    {
+      "res": [
+        {
+          "umidity": 90, 
+          "temperature": 20
+        }
+      ], 
+      "end-points": "topic/device", 
+      "ID": "multisensor", 
+      "timestamp": 1
+    }, 
+    {
+      "res": [
+        {
+          "umidity": 90, 
+          "temperature": 20
+        }
+      ], 
+      "end-points": "topic/device", 
+      "ID": "multisensor2", 
+      "timestamp": 1
+    }
+  ], 
+  "broker": {
+    "ip": "192.168.1.2", 
+    "port": 8080
+  }
+}

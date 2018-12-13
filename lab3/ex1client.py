@@ -14,4 +14,4 @@ if __name__ == "__main__":
             print "operand2: ", r['op2']
             print "%s %s %s = %s" % (r['op1'], r['operation'], r['op2'], r['result'])
         except Exception, e:
-            print "input error try again"
+            print "input error try again", e
