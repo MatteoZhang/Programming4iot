@@ -27,7 +27,6 @@ class Palindrome(object):
     def isPalindrome(self, myString):
         length = len(myString)
         for i in range(0, length / 2):
-            print i
             if (myString[i] != myString[length - i - 1]):
                 return False
         return True
@@ -41,6 +40,5 @@ if __name__ == '__main__':
         }
     }
     cherrypy.tree.mount(PalindromeWS(), '/palindrome', conf)
-
     cherrypy.engine.start()
     cherrypy.engine.block()
