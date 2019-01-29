@@ -37,6 +37,7 @@ class MySubscriber:
     def myOnMessageReceived(self, paho_mqtt, userdata, msg):
         print ("Topic: '" + msg.topic + "', Qos: '" + str(msg.qos) + "' Message: '" + str(msg.payload) + "'")
 
+
 if __name__ == "__main__":
     test = MySubscriber("MySubscriber 1")
     test.start()

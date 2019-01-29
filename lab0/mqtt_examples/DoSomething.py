@@ -17,7 +17,7 @@ class DoSomething():
 	def end(self):
 		# if needed, perform some other actions befor ending the software
 		print ("ending %s" % (self.clientID))
-		self.myMqttClient.stop ()
+		self.myMqttClient.stop()
 
 	def notify(self, topic, msg):
 		# manage here your received message. You can perform some error-check here  

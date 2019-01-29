@@ -38,7 +38,7 @@ if __name__ == "__main__":
 	while (a < 20):
 		message = ('whatever message, also in JSON %d' % (a))
 		print ("Publishing: '%s'" % (message))
-		test.myPublish ('/this/is/my/topic', message) 	
+		test.myPublish('/this/is/my/topic', message)
 		a += 1
 		time.sleep(1)
 

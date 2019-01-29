@@ -7,6 +7,7 @@ import time
 #broker = '192.168.43.220'
 IPv4 = '192.168.43.178'
 
+
 class MySubscriber:
     def __init__(self, clientID):
         self.clientID = clientID
@@ -35,6 +36,7 @@ class MySubscriber:
 
     def myOnMessageReceived(self, paho_mqtt, userdata, msg):
         print ("Topic: '" + msg.topic + "', Qos: '" + str(msg.qos) + "' Message: '" + str(msg.payload) + "'")
+
 
 if __name__ == "__main__":
     test = MySubscriber("MySubscriber 2")
