@@ -11,3 +11,7 @@
 .idea
 *.xml
 *.iml
+*.iml
+.idea/workspace.xml
+*.xml
+.idea/Programming4iot.iml
