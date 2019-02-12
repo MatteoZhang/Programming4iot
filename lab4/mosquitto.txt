@@ -1,6 +1,7 @@
 installare openssl link nel read me
 http://slproweb.com/products/Win32OpenSSL.html
 win64 openssl v1.1.0j.light
+C:\Program Files\mosquitto
 
 aprire un nuovo prompt e scrivere
 mosquitto -p 1883 -v
