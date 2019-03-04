@@ -22,3 +22,8 @@ per trovare ip del broker fare ipconfig
 optional :
 mosquitto -d
 net start mosquitto
+
+
+usefull cdm line for windows if u use pycharm
+# netstat -ano | findstr :<PORTA>
+# taskkill /PID <PROCESSID> /F
