@@ -5,6 +5,7 @@ import cherrypy
 import time
 
 
+'''
 FILE = "main_catalog.json"
 
 
@@ -92,3 +93,5 @@ if __name__ == '__main__':
     # taskkill /PID PROCESSID /F
     # http://127.0.0.1:8081/user?id=stampantefax
     # http://127.0.0.1:8081/user
+'''
+
